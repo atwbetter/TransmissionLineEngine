@@ -1,11 +1,11 @@
 spring:
   application:
     name: transmission-line-gis
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
   
   datasource:
-    url: jdbc:postgresql://localhost:5432/transmission_line_gis
+    url: jdbc:postgresql://192.168.5.70:5432/postgres
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -31,21 +31,21 @@ spring:
     show-sql: false
     open-in-view: false
 
-  redis:
-    host: localhost
-    port: 6379
-    database: 0
-    timeout: 2000ms
-
   jackson:
     serialization:
       write-dates-as-timestamps: false
       indent-output: false
     time-zone: Asia/Shanghai
     default-property-inclusion: non_null
+  data:
+    redis:
+      timeout: 2000ms
+      host: 192.168.5.70
+      database: 0
+      port: 6379
 
 server:
-  port: 8080
+  port: 8188
   servlet:
     context-path: /api
   compression:
