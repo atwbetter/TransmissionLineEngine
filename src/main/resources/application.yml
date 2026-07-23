@@ -1,6 +1,8 @@
 spring:
   application:
     name: transmission-line-gis
+  profiles:
+    active: dev
   
   datasource:
     url: jdbc:postgresql://localhost:5432/transmission_line_gis
@@ -10,14 +12,22 @@ spring:
     hikari:
       maximum-pool-size: 20
       minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
 
   jpa:
     database-platform: org.hibernate.spatial.dialect.postgis.PostgisPG95Dialect
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.spatial.dialect.postgis.PostgisPG95Dialect
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+        format_sql: true
     show-sql: false
     open-in-view: false
 
@@ -25,10 +35,12 @@ spring:
     host: localhost
     port: 6379
     database: 0
+    timeout: 2000ms
 
   jackson:
     serialization:
       write-dates-as-timestamps: false
+      indent-output: false
     time-zone: Asia/Shanghai
     default-property-inclusion: non_null
 
@@ -36,12 +48,17 @@ server:
   port: 8080
   servlet:
     context-path: /api
+  compression:
+    enabled: true
+    min-response-size: 1024
 
 logging:
   level:
     root: INFO
     com.tl: DEBUG
     org.hibernate.SQL: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
 
 springdoc:
   api-docs:
@@ -49,3 +66,4 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+    show-actuator: false
