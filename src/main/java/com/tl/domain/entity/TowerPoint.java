@@ -12,16 +12,24 @@ public class TowerPoint {
     public int id;
 
     /**
-     * 经纬度
+     * 经度
      */
     public double lon;
 
+    /**
+     * 纬度
+     */
     public double lat;
 
     /**
      * 地面高程
      */
     public double elev;
+
+    /**
+     * 地面高程
+     */
+    private double groundElevation;
 
     /**
      * 坡度
@@ -31,7 +39,12 @@ public class TowerPoint {
     /**
      * 塔高
      */
-    public double towerHeight=25;
+    public double towerHeight = 25;
+
+    /**
+     * 塔顶高程
+     */
+    private double towerTopElevation;
 
     /**
      * 与前塔距离
@@ -43,5 +56,15 @@ public class TowerPoint {
      */
     public JSONArray catenary;
 
+
+    /**
+     * 前一档导线
+     */
+    private CatenaryResult previousCatenary;
+
+    /**
+     * 后一档导线
+     */
+    private CatenaryResult nextCatenary;
 
 }

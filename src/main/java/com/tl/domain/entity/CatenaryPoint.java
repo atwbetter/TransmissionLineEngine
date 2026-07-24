@@ -1,4 +1,4 @@
-package com.tl.domain;
+package com.tl.domain.entity;
 
 import lombok.Data;
 
@@ -35,9 +35,9 @@ public class CatenaryPoint {
 
     /**
      * 净空距离
+     * 对地距离
      */
     private double clearance;
-
 
 
     /**
@@ -45,15 +45,16 @@ public class CatenaryPoint {
      */
     private boolean safe;
 
+    /**
+     * 是否碰撞
+     */
+    private boolean collision;
 
 
     /**
      * 距离起点
      */
     private double distance;
-
-
-
 
 
 }

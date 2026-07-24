@@ -1,4 +1,4 @@
-package com.tl.domain.entity;
+package com.tl.common.config;
 
 import lombok.Data;
 

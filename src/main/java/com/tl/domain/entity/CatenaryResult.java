@@ -1,5 +1,6 @@
-package com.tl.domain.model;
+package com.tl.domain.entity;
 
+import com.tl.domain.model.TowerPoint;
 import lombok.Data;
 
 import java.util.List;
@@ -7,28 +8,50 @@ import java.util.List;
 @Data
 public class CatenaryResult {
 
+
     /** 起点塔 */
     private TowerPoint startTower;
 
     /** 终点塔 */
     private TowerPoint endTower;
 
-    /** 档距 */
+    /**
+     * 档距
+     */
     private double span;
 
-    /** 最大弧垂 */
+
+    /**
+     * 最大弧垂
+     */
     private double sag;
 
-    /** 最低点 */
+
+    /**
+     * 最低点
+     */
     private CatenaryPoint lowestPoint;
 
-    /** 最小安全距离 */
+
+    /**
+     * 最小净空
+     */
     private double minimumClearance;
+
+
+    /**
+     * 是否通过
+     */
+    private boolean pass;
 
     /** 是否满足安全距离 */
     private boolean clearancePass;
 
-    /** 导线采样点 */
+
+    /**
+     * 所有采样点
+     */
     private List<CatenaryPoint> points;
+
 
 }

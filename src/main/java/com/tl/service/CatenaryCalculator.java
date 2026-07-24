@@ -1,9 +1,9 @@
 package com.tl.service;
 
 import com.tl.domain.model.TowerPoint;
-import com.tl.domain.CatenaryPoint;
-import com.tl.domain.CatenaryResult;
-import com.tl.domain.entity.TowerConfig;
+import com.tl.domain.entity.CatenaryPoint;
+import com.tl.domain.entity.CatenaryResult;
+import com.tl.common.config.TowerConfig;
 
 import java.util.ArrayList;
 import java.util.List;
