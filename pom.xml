@@ -146,8 +146,16 @@
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
             <artifactId>fastjson2</artifactId>
-            <version>2.0.62</version>
+            <version>2.0.40</version>
             <scope>compile</scope>
+        </dependency>
+
+
+        <!-- GDAL包引入 -->
+        <dependency>
+            <groupId>org.gdal</groupId>
+            <artifactId>gdal</artifactId>
+            <version>3.8.0</version>
         </dependency>
 
 

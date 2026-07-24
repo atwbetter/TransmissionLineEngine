@@ -67,3 +67,11 @@ springdoc:
     path: /swagger-ui.html
     enabled: true
     show-actuator: false
+
+# 项目参数
+project:
+  name: 传输线路GIS系统
+  version: 1.0.0
+  file-path:
+    dem: E:/tifdata/D1/China_Dem_15.tif
+    slope: E:/tifdata/China_Slope_15.tif
