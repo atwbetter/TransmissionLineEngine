@@ -8,10 +8,14 @@ import java.util.List;
 public class CatenaryResult {
 
 
-    /** 起点塔 */
+    /**
+     * 起点塔
+     */
     private TowerPoint startTower;
 
-    /** 终点塔 */
+    /**
+     * 终点塔
+     */
     private TowerPoint endTower;
 
     /**
@@ -43,7 +47,9 @@ public class CatenaryResult {
      */
     private boolean pass;
 
-    /** 是否满足安全距离 */
+    /**
+     * 是否满足安全距离
+     */
     private boolean clearancePass;
 
 
