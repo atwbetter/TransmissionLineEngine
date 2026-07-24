@@ -1,5 +1,8 @@
 package com.tl.domain.entity;
 
+import lombok.Data;
+
+@Data
 public class TowerConfig {
 
 
@@ -35,6 +38,14 @@ public class TowerConfig {
      * 悬链线k
      */
     public double k=0.02;
+
+
+    /** 最小对地距离 */
+    private double minimumGroundClearance = 6;
+
+    /** 最大允许坡度 */
+    private double maximumSlope = 45;
+
 
 
 }
