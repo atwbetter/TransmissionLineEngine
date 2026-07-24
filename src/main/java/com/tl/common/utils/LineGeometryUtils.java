@@ -271,55 +271,32 @@ public class LineGeometryUtils {
             List<LinePoint> line,
             double sampleDistance) {
 
+        List<LinePoint> result = new ArrayList<>();
 
-        List<LinePoint> result =
-                new ArrayList<>();
-
-
-        if (line == null
-                || line.size() < 2) {
-
+        if (line == null || line.size() < 2) {
             return result;
-
         }
 
 
         //加入起点
 
-        result.add(
-                line.get(0)
-        );
-
+        result.add(line.get(0));
 
         for (int i = 0; i < line.size() - 1; i++) {
 
+            LinePoint start = line.get(i);
 
-            LinePoint start =
-                    line.get(i);
+            LinePoint end = line.get(i + 1);
 
+            double segmentLength = distance(start, end);
 
-            LinePoint end =
-                    line.get(i + 1);
-
-
-            double segmentLength =
-                    distance(
-                            start,
-                            end
-                    );
-
-
-            int count =
-                    (int) (segmentLength / sampleDistance);
+            int count = (int) (segmentLength / sampleDistance);
 
 
             for (int j = 1; j <= count; j++) {
 
 
-                double ratio =
-                        (j * sampleDistance)
-                                /
-                                segmentLength;
+                double ratio = (j * sampleDistance) / segmentLength;
 
 
                 if (ratio >= 1) {
@@ -329,13 +306,7 @@ public class LineGeometryUtils {
                 }
 
 
-                result.add(
-                        interpolate(
-                                start,
-                                end,
-                                ratio
-                        )
-                );
+                result.add(interpolate(start, end, ratio));
 
 
             }
@@ -346,11 +317,7 @@ public class LineGeometryUtils {
 
         //补终点
 
-        result.add(
-                line.get(
-                        line.size() - 1
-                )
-        );
+        result.add(line.get(line.size() - 1));
 
 
         return result;
@@ -367,42 +334,19 @@ public class LineGeometryUtils {
                         "112.659456,26.014043,507.2]";
 
 
-        List<LinePoint> points =
-                LineGeometryUtils.parseLine(line);
+        List<LinePoint> points = LineGeometryUtils.parseLine(line);
 
+        System.out.println("原始点:" + points.size());
 
-        System.out.println(
-                "原始点:"
-                        + points.size()
-        );
+        double length = LineGeometryUtils.lineLength(points);
 
+        System.out.println("线路长度:" + length + "米");
 
-        double length =
-                LineGeometryUtils.lineLength(points);
+        List<LinePoint> samples = LineGeometryUtils.sampleLine(points, 5);
 
-
-        System.out.println(
-                "线路长度:"
-                        + length
-                        + "米"
-        );
-
-
-        List<LinePoint> samples =
-                LineGeometryUtils.sampleLine(
-                        points,
-                        5
-                );
-
-
-        System.out.println(
-                "采样点:"
-                        + samples.size()
-        );
-
+        System.out.println("采样点:" + samples.size());
 
         for (LinePoint p : samples) {
-
             System.out.println(p);
 
         }
