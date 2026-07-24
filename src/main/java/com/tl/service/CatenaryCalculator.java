@@ -128,7 +128,7 @@ public class CatenaryCalculator {
             cp.setClearance(clearance);
 
 
-            boolean safe = clearance >= config.getGroundClearance();
+            boolean safe = clearance >= config.getMinGroundClearance();
 
 
             cp.setSafe(safe);
@@ -159,7 +159,7 @@ public class CatenaryCalculator {
         result.setMinimumClearance(minClearance);
 
 
-        result.setPass(minClearance >= config.getGroundClearance());
+        result.setPass(minClearance >= config.getMinGroundClearance());
 
 
         return result;
