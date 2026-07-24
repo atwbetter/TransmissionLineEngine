@@ -1,6 +1,5 @@
 package com.tl.domain.entity;
 
-import com.tl.domain.model.TowerPoint;
 import lombok.Data;
 
 import java.util.List;
