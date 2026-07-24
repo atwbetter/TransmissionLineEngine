@@ -38,4 +38,12 @@ public interface TerrainProvider {
             double lat
     );
 
+
+    /**
+     * 批量获取坡度
+     */
+    List<Double> getSlopes(
+            List<double[]> points
+    );
+
 }

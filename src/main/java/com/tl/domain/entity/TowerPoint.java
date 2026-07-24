@@ -1,9 +1,11 @@
 package com.tl.domain.entity;
 
 import com.alibaba.fastjson2.JSONArray;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class TowerPoint {
 
     /**
@@ -39,7 +41,7 @@ public class TowerPoint {
     /**
      * 塔高
      */
-    public double towerHeight = 25;
+    public double towerHeight ;
 
     /**
      * 塔顶高程
@@ -50,6 +52,12 @@ public class TowerPoint {
      * 与前塔距离
      */
     public double span;
+
+
+    /**
+     * 是否满足约束
+     */
+    private boolean valid;
 
     /**
      * 前后悬链线
