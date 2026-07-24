@@ -23,4 +23,46 @@ public class AaHomeController {
         return R.ok("成功");
     }
 
+
+
+
+
+
+/*
+
+    transmission-line-engine
+│
+        ├── geometry                //几何计算
+│      LineGeometryUtils
+│      GeoUtils
+│
+        ├── terrain                 //DEM分析
+│      TerrainService
+│      RasterReader
+│
+        ├── tower                   //塔位
+│      TowerPoint
+│      TowerConfig
+│      TowerLayoutEngine
+│
+        ├── catenary                //悬链线
+│      CatenaryCalculator
+│      CatenaryPoint
+│      CatenaryResult
+│
+        ├── safety                  //安全校验
+│      GroundClearanceChecker
+│      SpanChecker
+│      SlopeChecker
+│
+        ├── optimizer               //排塔优化
+│      TowerOptimizer
+│      CostFunction
+│
+        └── model                   //公共模型
+
+
+
+        */
+
 }
