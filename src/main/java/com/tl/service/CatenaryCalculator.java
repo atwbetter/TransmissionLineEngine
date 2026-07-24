@@ -1,6 +1,6 @@
 package com.tl.service;
 
-import com.tl.common.model.TowerPoint;
+import com.tl.domain.model.TowerPoint;
 import com.tl.domain.CatenaryPoint;
 import com.tl.domain.CatenaryResult;
 import com.tl.domain.entity.TowerConfig;

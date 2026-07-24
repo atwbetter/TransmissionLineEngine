@@ -1,4 +1,4 @@
-package com.tl.common.model;
+package com.tl.domain.model;
 
 import lombok.Data;
 
